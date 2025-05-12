@@ -7,7 +7,7 @@ price = 0
 
 last_product = ""
 
-compra = input("Qual equipamento deseja buscar o poreço? ")
+compra = input("Qual equipamento deseja buscar o preço? ")  
 
 # URL da página que você quer pegar os preços
 url = f"https://www.cfcarehospitalar.com.br/materiais-hospitalares/{compra}"
