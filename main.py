@@ -7,8 +7,10 @@ price = 0
 
 last_product = ""
 
+compra = input("Qual equipamento deseja buscar o poreço? ")
+
 # URL da página que você quer pegar os preços
-url = "https://www.cfcarehospitalar.com.br/materiais-hospitalares/luva-de-latex"
+url = f"https://www.cfcarehospitalar.com.br/materiais-hospitalares/{compra}"
 
 response = requests.get(url)
 
@@ -26,5 +28,6 @@ for titulo in all_products:
         if 'price": ' in linha:
             numero_linha = re.search(r"\d+\.\d+", linha)
             price = float(numero_linha.group())
+            moeda = "R$"
             
-            print(name.text.strip(), price)
+            print(name.text.strip(), moeda, price)
